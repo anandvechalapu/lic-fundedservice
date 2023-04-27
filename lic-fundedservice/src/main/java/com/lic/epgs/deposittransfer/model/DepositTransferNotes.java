@@ -1,40 +1,25 @@
 package com.lic.epgs.deposittransfer.model;
 
-import javax.persistence.*;
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "DepositTransferNotes")
 public class DepositTransferNotes {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
-
-    @Column(name = "transfer_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String transferId;
-
-    @Column(name = "note_contents")
-    private String noteContents;
-
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "notes_by")
-    private String notesBy;
-
-    @Column(name = "created_on")
-    private Date createdOn;
-
-    @Column(name = "is_active")
     private Boolean isActive;
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getTransferId() {
@@ -45,43 +30,11 @@ public class DepositTransferNotes {
         this.transferId = transferId;
     }
 
-    public String getNoteContents() {
-        return noteContents;
-    }
-
-    public void setNoteContents(String noteContents) {
-        this.noteContents = noteContents;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getNotesBy() {
-        return notesBy;
-    }
-
-    public void setNotesBy(String notesBy) {
-        this.notesBy = notesBy;
-    }
-
-    public Date getCreatedOn() {
-        return createdOn;
-    }
-
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
-    }
-
-    public Boolean getActive() {
+    public Boolean getIsActive() {
         return isActive;
     }
 
-    public void setActive(Boolean active) {
-        isActive = active;
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
     }
 }
